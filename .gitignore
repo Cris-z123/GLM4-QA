@@ -1,0 +1,43 @@
+# Python 核心忽略
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.python-version
+
+# 虚拟环境
+venv/
+.venv/
+env/
+.env/
+virtualenvs/
+
+# 依赖项
+site-packages/
+pip-selfcheck.json
+pip-log.txt
+
+# 配置文件与密钥
+.env
+.env.*
+secrets.py
+config.ini
+*.key
+credentials.json
+
+# 打包/构建产物
+build/
+dist/
+*.egg-info/
+*.egg
+
+# 通用忽略
+.DS_Store
+Thumbs.db
+*.log
+logs/
+.idea/
+.vscode/
+
+
+config
