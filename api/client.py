@@ -1,7 +1,9 @@
 import requests
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
+
 from config.settings import API_BASE_URL, API_KEY
+
 
 class APIClient:
     def __init__(self):
@@ -11,7 +13,7 @@ class APIClient:
             "Content-Type": "application/json"
         }
         self.session = self._create_session()
-    
+
     def _create_session(self):
         """
         创建带重试机制的 Session
@@ -38,7 +40,7 @@ class APIClient:
         response = self.session.get(url, headers=self.headers, params=params)
         response.raise_for_status()
         return response.json()
-    
+
     def post_data(self, endpoint, data):
         """
         POST请求

@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "GLM4-QA"
+version = "0.1.0"
+description = "Leverage large language models (LLMs) to build an online knowledge base.​"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = ["-v", "--tb=short", "--cov=src", "--cov-report=term-missing"]
+testpaths = ["tests"]
+
+[tool.isort]
+profile = "black"
+line_length = 120
+
+[tool.black]
+line-length = 120
+skip-magic-trailing-comma = true
+
+[tool.ruff]
+line-length = 120
+select = [
+    "E",   # pycodestyle 错误
+    "W",   # pycodestyle 警告
+    "F",   # pyflakes
+    "I",   # isort
+    "UP",  # pyupgrade - 自动更新语法
+    "B",   # flake8-bugbear
+    "C90", # mccabe 复杂性检查
+]
+ignore = ["E203"]
+target-version = "py311"
+
+[tool.ruff.isort]
+known-first-party = ["GLM4-QA"]
+
+[tool.mypy]
+strict = true
+show_error_codes = true
+disallow_any_generics = true
+warn_redundant_casts = true
+warn_unused_ignores = true
