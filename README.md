@@ -1,1 +1,4 @@
-# 智谱大模型调用实例项目
+# LLM Project
+
+- python3
+  LangChain
